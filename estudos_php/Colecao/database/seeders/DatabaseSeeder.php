@@ -2,7 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Colecao;
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Categoria;
+use App\Models\Prateleira;
+use App\Models\Figura;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +18,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // User::factory()->create([
+        //     "name" => "Cuca",
+        //     "email" => "cuca@gmail.com",
+        //     "password" => bcrypt("2816")
+        // ]);
+
+        // User::factory(100)->create();
+
+        // Colecao::factory()->count(10)->create();
+
+        // Prateleira::factory(50)->create();
+        // Figucra::factory(200)->create();
     }
 }

@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\User;
+use App\Models\Figura;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TesteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/users', ['uses' => 'TesteController@users']);
+
+Route::get('/sortearNumero', function(){
+    print(rand(1, 10));
+});
+
+Route::get('/pesquisarFigura/{nome?}', function(string $nome = 'sem nome'){
+    $figuras = Figura::where('nome', 'LIKE', '%' . $nome . '%')->get();
+    foreach($figuras as $figura){
+        print("<b>Nome:</b> {$figura->nome} - <b>Figura:</b> {$figura->categoria->nome} - <b>Prateleira:</b> {$figura->prateleira->nome} - <b>Coleção:</b> {$figura->categoria->colecao->nome}");
+        print('<br>');
+    }
 });
