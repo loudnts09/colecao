@@ -5,10 +5,12 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Prateleira extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $table = 'prateleiras';
 
@@ -24,7 +26,7 @@ class Prateleira extends Model
         return Carbon::parse($this->attributes['updated_at'])->format('d/m/Y');
     }
     public function getDeletedAtAttribute(){
-        return Carbon::pare($this->attributes['deleted_at'])->format('d/m/Y');
+        return Carbon::parse($this->attributes['deleted_at'])->format('d/m/Y');
     }
 
     public function colecao(){

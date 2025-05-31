@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Colecao;
 
 class CategoriaFactory extends Factory
 {
@@ -14,7 +15,7 @@ class CategoriaFactory extends Factory
     public function definition()
     {
         return [
-            'colecao_id' => rand(1, 10),
+            'colecao_id' => Colecao::inRandomOrder()->first()->id ?? Colecao::factory(),
             'nome' => $this->faker->name(),
             'descricao'=> $this->faker->text(),
         ];

@@ -26,9 +26,9 @@ class DatabaseSeeder extends Seeder
 
         // User::factory(100)->create();
 
-        // Colecao::factory()->count(10)->create();
-
-        // Prateleira::factory(50)->create();
-        // Figucra::factory(200)->create();
+        // Colecao::factory()->count(50)->create();
+        // Categoria::factory()->count(100)->create();
+        // Prateleira::factory(150)->create();
+        // Figura::factory(300)->create();
     }
 }
